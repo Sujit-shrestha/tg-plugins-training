@@ -1,8 +1,8 @@
 <?php 
 
 /**
- * Plugin Name: Role registration using AJAX
- * Description: Adds user defined role using AJAX
+ * Plugin Name: Role registration using AJAX.
+ * Description: Adds user defined role using AJAX. Creates a shortcode called [user_role_using_AJAX] which renders form for role registration.
  * Version: 2024.5.21
  * Author: Sujit Shrestha
  * Author URI: https://linkedin.com/in/mrsujiit
@@ -24,7 +24,11 @@ final class Role_using_ajax {
     new Plugins\Role_using_ajax\Role_registration_template_shortcode( $roleManager );
     
   }
-
+/**
+ * Returns instance of this class
+ *
+ * @return self
+ */
   static function getInstance(){
     
     return new self();

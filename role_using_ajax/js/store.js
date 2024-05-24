@@ -31,3 +31,5 @@ jQuery(document).on("click", '#wordpress_ajax_form_btn',
 			}
 		});
 	});
+
+	

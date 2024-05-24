@@ -191,7 +191,7 @@ class Manage_user_role_usingAJAx
     //Localization for ajax requests requirements.
     wp_localize_script(
       'customjs',
-      __('my_ajax_obj'),
+      esc_html__('my_ajax_obj'),
       array(
         'ajax_url' => admin_url('admin-ajax.php'),
         'current_user_id' => get_current_user_id(),

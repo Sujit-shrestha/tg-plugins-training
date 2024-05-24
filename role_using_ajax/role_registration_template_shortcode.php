@@ -46,12 +46,14 @@ class Role_registration_template_shortcode
     $atts = array_change_key_case((array) $atts, CASE_LOWER);
 
     $o = '<div class="rua-user_role_using_AJAX-box">';
+    
     $o .= "<p1>";
     $o .= esc_html__('Test html here.', 'rua-themegrill-training');
 
     //get the template for user registration role
     $o .= $this->roleManager->role_form_template();
 
+    $o .= ' <div class="g-recaptcha" data-sitekey="your_site_key"></div><br/>';
 
     $o .= '</div>';
 
