@@ -16,7 +16,7 @@ class Role_registration_template_shortcode
   private $roleManager;
   public function __construct(RoleManager $roleManager)
   {
-    
+
     $this->roleManager = $roleManager;
 
     //adding shortcodes to add the data in the user area
@@ -47,7 +47,7 @@ class Role_registration_template_shortcode
 
     $o = '<div class="rua-user_role_using_AJAX-box">';
     $o .= "<p1>";
-    $o .= esc_html__('Test html here.');
+    $o .= esc_html__('Test html here.', 'rua-themegrill-training');
 
     //get the template for user registration role
     $o .= $this->roleManager->role_form_template();

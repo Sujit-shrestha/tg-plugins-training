@@ -6,6 +6,7 @@
  * Version: 2024.5.21
  * Author: Sujit Shrestha
  * Author URI: https://linkedin.com/in/mrsujiit
+ * Text Domain: 'rua-themegrill-training'
  * License: GPLv2 or Later
  */
 defined('ABSPATH') or die( 'Unauthorized to access this file!!' );

@@ -101,8 +101,8 @@ class Manage_user_role_usingAJAx
 
       wp_send_json_error(
         array(
-          'message' => __('Error'),
-          'redirect_url' => esc_html__($url),
+          'message' => esc_html__('Error'),
+          'redirect_url' => esc_html__($url , 'rua-themegrill-training'),
         )
       );
       exit;
@@ -117,7 +117,7 @@ class Manage_user_role_usingAJAx
     //check if the nonce is valid.
     if (!wp_verify_nonce($_POST['nonce'], 'rua_security_nonce')) {
 
-      wp_send_json_error(array("message" => __("Nonce not verified. Please reload !")));
+      wp_send_json_error(array("message" => esc_html__("Nonce not verified. Please reload !" , 'rua-themegrill-training')));
       exit;
 
     }
@@ -128,7 +128,7 @@ class Manage_user_role_usingAJAx
     //checking if user has admin privilege
 
     if (!in_array("administrator", $user_role->roles)) {
-      wp_send_json_error(array("message" => __("User does not have required privileges. Please contact admin ! ")));
+      wp_send_json_error(array("message" => esc_html__("User does not have required privileges. Please contact admin ! ", 'rua-themegrill-training')));
       exit;
     }
 
@@ -155,7 +155,7 @@ class Manage_user_role_usingAJAx
     do_action('roleusingajax_add_user_role', $userdata);
 
 
-    wp_send_json_success(array("message" => __("Data received successfully!!"), 'data' => $userdata));
+    wp_send_json_success(array("message" => esc_html__("Data received successfully!!" , 'rua-themegrill-training'), 'data' => $userdata));
     exit;
 
   }
@@ -167,8 +167,8 @@ class Manage_user_role_usingAJAx
   public function role_adder($role_data)
   {
     add_role(
-      esc_html__($role_data["user_role"]),
-      esc_html__(ucfirst($role_data["user_role"])),
+      esc_html__($role_data["user_role"] ,  'rua-themegrill-training'),
+      esc_html__(ucfirst($role_data["user_role"]) , 'rua-themegrill-training'),
       $role_data["capabilities"],
 
     );
