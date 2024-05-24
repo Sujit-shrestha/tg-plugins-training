@@ -48,11 +48,9 @@ final class Role_using_ajax {
     //flush rewrite rules
     flush_rewrite_rules();
 
-
   }
-
-
 }
+
 /**
  * checks if class exists and then initializes the class
  */
