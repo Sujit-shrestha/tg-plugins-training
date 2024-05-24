@@ -186,6 +186,8 @@ class Manage_user_role_usingAJAx
     //including the js file 
     wp_enqueue_script('customjs', plugins_url('role_using_ajax/js/store.js', 'role_using_ajax'), ['jquery'], '1.0.0');
 
+    wp_enqueue_style( 'my-style', plugins_url( '/assets/css/ui_user_role_input.css', __FILE__ ), [], '1.0.0', 'all' );
+
     //Localization for ajax requests requirements.
     wp_localize_script(
       'customjs',
