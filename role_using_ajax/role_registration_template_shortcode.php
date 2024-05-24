@@ -6,9 +6,13 @@ use Plugins\Role_using_ajax\Manage_user_role_usingAJAx as RoleManager;
 
 defined('ABSPATH') || exit;
 
+/**
+ * Generates shortcode called as  : [user_role_using_AJAX].
+ */
+
 class Role_registration_template_shortcode
 {
-  //class instance 
+  //class instance.
   private $roleManager;
   public function __construct(RoleManager $roleManager)
   {
@@ -18,6 +22,11 @@ class Role_registration_template_shortcode
     add_action('init', array($this, 'shortcode_init_role_registration_template'));
   }
 
+  /**
+   * Adds shortcode for the template.
+   *
+   * @return void
+   */
   public function shortcode_init_role_registration_template()
   {
 
@@ -26,7 +35,7 @@ class Role_registration_template_shortcode
   }
 
   /**
-   * Template for the user role registration 
+   * Template for the user role registration.
    *
    * @return 
    */

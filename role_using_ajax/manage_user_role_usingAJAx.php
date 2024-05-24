@@ -4,12 +4,12 @@ namespace Plugins\Role_using_ajax;
 
 defined('ABSPATH') || exit;
 /**
- * Addes Template for the ajax request  , handles the form input , adds role using the data from form
+ * Addes Template for the ajax request  , handles the form input , adds role using the data from form.
  */
 class Manage_user_role_usingAJAx
 {
   /**
-   * Constructor
+   * Constructor.
    */
   public function __construct()
   {
@@ -19,7 +19,7 @@ class Manage_user_role_usingAJAx
   }
 
   /**
-   * Initiates hooks
+   * Initiates hooks.
    *
    * @return void
    */
@@ -36,7 +36,7 @@ class Manage_user_role_usingAJAx
 
   }
   /**
-   * Security checks : Logged in ? 
+   * Security checks : Logged in ? .
    */
 
   private function loginChecks()
@@ -49,7 +49,7 @@ class Manage_user_role_usingAJAx
   }
 
   /**
-   * Template definition for taking input fron user on new Role 
+   * Template definition for taking input fron user on new Role .
    *
    * @return string
    */
@@ -87,7 +87,7 @@ class Manage_user_role_usingAJAx
   }
 
   /**
-   * Handles user role data sent by the user using form
+   * Handles user role data sent by the user using form.
    *
    * @return void
    */
@@ -110,11 +110,11 @@ class Manage_user_role_usingAJAx
     }
 
 
-    //parsing the serialized string
+    //parsing the serialized string.
     parse_str($_POST["data"], $formData);
 
 
-    //check if the nonce is valid
+    //check if the nonce is valid.
     if (!wp_verify_nonce($_POST['nonce'], 'rua_security_nonce')) {
 
       wp_send_json_error(array("message" => __("Nonce not verified. Please reload !")));
@@ -122,7 +122,7 @@ class Manage_user_role_usingAJAx
 
     }
 
-    //getting user data if user is logged in
+    //getting user data if user is logged in.
     $user_role = get_userdata(get_current_user_id());
 
     //checking if user has admin privilege
@@ -133,7 +133,7 @@ class Manage_user_role_usingAJAx
     }
 
 
-    //array to store user input data
+    //array to store user input data.
     $userdata = [];
 
     //sanitizaiton task
@@ -162,7 +162,7 @@ class Manage_user_role_usingAJAx
 
 
   /**
-   * Adds new role with capabilities
+   * Adds new role with capabilities.
    */
   public function role_adder($role_data)
   {
@@ -176,7 +176,7 @@ class Manage_user_role_usingAJAx
   }
 
   /**
-   * Enqueing required scripts
+   * Enqueing required scripts.
    *
    * @return void
    */
@@ -186,7 +186,7 @@ class Manage_user_role_usingAJAx
     //including the js file 
     wp_enqueue_script('customjs', plugins_url('role_using_ajax/js/store.js', 'role_using_ajax'), ['jquery'], '1.0.0');
 
-    //Localization for ajax requests requirements
+    //Localization for ajax requests requirements.
     wp_localize_script(
       'customjs',
       __('my_ajax_obj'),
