@@ -1,0 +1,7 @@
+Activate the plugin
+
+Create a new page and add shortcode  : [user_role_using_AJAX]
+
+
+You will see the form rendered on the page.
+
